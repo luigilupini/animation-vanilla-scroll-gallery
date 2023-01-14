@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Animated Scroll Gallery</title>
+  </head>
+
+  <body>
+    <section>
+      <h1>scroll start</h1>
+    </section>
+
+    <section class="gallery">
+      <div class="gallery-wrapper">
+        <h1>Our Work</h1>
+        <div class="work">
+          <!-- card one -->
+          <div class="card">
+            <div class="img-container">
+              <div class="img"></div>
+            </div>
+            <div class="content">
+              <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                Laudantium nostrum distinctio id quam velit nemo.
+              </p>
+            </div>
+          </div>
+          <!-- card two -->
+          <div class="card">
+            <div class="img-container">
+              <div class="img"></div>
+            </div>
+            <div class="content">
+              <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                Laudantium nostrum distinctio id quam velit nemo.
+              </p>
+            </div>
+          </div>
+          <!-- card three -->
+          <div class="card">
+            <div class="img-container">
+              <div class="img"></div>
+            </div>
+            <div class="content">
+              <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                Laudantium nostrum distinctio id quam velit nemo.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h1>scroll end</h1>
+    </section>
+  </body>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+  <script>
+    const cards = document.querySelectorAll(".img");
+
+    let tl = new gsap.timeline({
+      scrollTrigger: {
+        trigger: ".work",
+        start: "top bottom",
+        end: "+=700",
+        scrub: 1,
+      },
+    });
+
+    cards.forEach((img) => {
+      let rotation = Math.floor(Math.random() * 40) - 20;
+      let positionX = Math.floor(Math.random() * 300) - 150;
+      let positionY = Math.floor(Math.random() * 300) - 150;
+      tl.from(
+        img,
+        {
+          rotation: rotation,
+          x: positionX,
+          y: positionY,
+        },
+        "-=1"
+      );
+      tl.to(
+        img,
+        {
+          backgroundSize: "100%",
+        },
+        ".2"
+      );
+    });
+  </script>
+</html>

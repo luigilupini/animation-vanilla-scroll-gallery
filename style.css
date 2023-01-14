@@ -1,0 +1,80 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+html,
+body {
+  min-height: 100vh;
+  font-size: 90%;
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+p {
+  /* font-weight: 500; */
+  font-size: 12px;
+  margin: 1rem 0 0;
+}
+
+section {
+  height: 100vh;
+  display: grid;
+  place-content: center;
+  overflow-y: hidden;
+}
+
+.gallery {
+  background: whitesmoke;
+  /* border: 2px solid black; */
+  /* border-right: none; */
+  /* border-left: none; */
+}
+.gallery-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.work {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background: white;
+  border-radius: 0.3rem;
+  padding: 1rem;
+  width: 300px;
+  height: 480px;
+}
+
+.img-container {
+  position: relative;
+  height: 100%;
+}
+.img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 170%;
+  border-radius: 0.3rem;
+}
+
+.card:nth-of-type(1) .img-container .img {
+  background-image: url("https://i.pinimg.com/564x/15/27/6c/15276cd8c9caab0334c1ad5f7ab2ff9c.jpg");
+}
+.card:nth-of-type(2) .img-container .img {
+  background-image: url("https://i.pinimg.com/564x/85/06/b6/8506b6aa377563d3fb231ba083179259.jpg");
+  /* background-position: 50%; */
+}
+.card:nth-of-type(3) .img-container .img {
+  background-image: url("https://i.pinimg.com/564x/f3/99/d9/f399d9e561d23f4ab10e88674436ddb1.jpg");
+}
